@@ -1,0 +1,21 @@
+import os
+
+# Mock API key for demonstration purposes
+securview_api_key_tst = "1234abcd-5678-efgh-9101-ijklmnopqrst"
+
+# Securely load the API key from an environment variable or use the mock value
+loaded_api_key = os.getenv('SECURVIEW_API_KEY_TST', securview_api_key_tst)
+
+# Detect environment type (example logic)
+environment = os.getenv('ENVIRONMENT', 'development')
+
+if loaded_api_key == securview_api_key_tst:
+    print(f"Warning: Using the mock API key in {environment} environment. Replace with a secure value in production.")
+else:
+    print(f"API key loaded securely from the environment in {environment} environment.")
+
+# Example usage in a mock API call
+def call_securview_api(api_key):
+    print(f"Calling the API with key: {api_key[:4]}... (truncated for security)")
+
+call_securview_api(loaded_api_key)
