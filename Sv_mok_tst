@@ -1,0 +1,71 @@
+import base64
+import os
+
+# Mock API Keys
+TEST_API_KEY_1 = "TEST_API_KEY_1234abcd-5678-efgh-9101-ijklmnopqrst"
+TEST_API_KEY_2 = "GITHUB_TEST_TOKEN_abcdef1234567890ghijklmnopqrstuvwxyz"
+TEST_API_KEY_3 = "SECURVIEW_API_KEY_TST_9876zyxw-5432-vuts-1098-rqponmlkjihg"
+
+# Mock Email Addresses
+TEST_EMAIL_1 = "test_email_001@securview.com"
+TEST_EMAIL_2 = "dev_poc_test@githubmonitoring.com"
+TEST_EMAIL_3 = "monitoring_demo_2024@securemail.test"
+
+# Mock Passwords or Credentials
+TEST_PASSWORD_1 = "TEST_PASSWORD_securview_demo!2024"
+TEST_PASSWORD_2 = "MOCK_PASSWORD_123SecureView!"
+TEST_CREDENTIALS = {"username": "mockuser", "password": "mockpass2024"}
+
+# Unique Identifiers
+TEST_IDENTIFIER_1 = "UNIQUE_IDENTIFIER_POC_20241119_001"
+TEST_IDENTIFIER_2 = "GITMON_TEST_IDENTIFIER_abc12345xyz"
+TEST_IDENTIFIER_3 = "SECURVIEW_REPO_IDENTIFIER_DEMO_2024"
+
+# URLs
+TEST_URL_1 = "https://api.securview.com/mockendpoint/test"
+TEST_URL_2 = "https://github.com/securview/test-repo-sensitive-data"
+
+# Environment Variables
+os.environ["ENV_VAR_POC_TEST"] = "test_value_001"
+os.environ["SECURVIEW_ENV_KEY"] = "mock_key_env_2024"
+
+# Base64 Encoded Test Strings
+BASE64_STRING_1 = base64.b64encode(b"test_sensitive_data_2024").decode('utf-8')
+BASE64_STRING_2 = base64.b64encode(b"SECURVIEW_POC_TEMPLATE").decode('utf-8')
+
+# Function to simulate sensitive data leak
+def simulate_sensitive_data_leak():
+    print("=== Mock API Keys ===")
+    print(TEST_API_KEY_1)
+    print(TEST_API_KEY_2)
+    print(TEST_API_KEY_3)
+    
+    print("\n=== Mock Email Addresses ===")
+    print(TEST_EMAIL_1)
+    print(TEST_EMAIL_2)
+    print(TEST_EMAIL_3)
+    
+    print("\n=== Mock Passwords or Credentials ===")
+    print(TEST_PASSWORD_1)
+    print(TEST_PASSWORD_2)
+    print(TEST_CREDENTIALS)
+    
+    print("\n=== Unique Identifiers ===")
+    print(TEST_IDENTIFIER_1)
+    print(TEST_IDENTIFIER_2)
+    print(TEST_IDENTIFIER_3)
+    
+    print("\n=== URLs ===")
+    print(TEST_URL_1)
+    print(TEST_URL_2)
+    
+    print("\n=== Environment Variables ===")
+    print(f"ENV_VAR_POC_TEST: {os.getenv('ENV_VAR_POC_TEST')}")
+    print(f"SECURVIEW_ENV_KEY: {os.getenv('SECURVIEW_ENV_KEY')}")
+    
+    print("\n=== Base64 Encoded Strings ===")
+    print(f"BASE64_STRING_1: {BASE64_STRING_1}")
+    print(f"BASE64_STRING_2: {BASE64_STRING_2}")
+
+# Simulate sensitive data exposure
+simulate_sensitive_data_leak()
